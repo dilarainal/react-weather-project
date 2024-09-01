@@ -3,10 +3,14 @@ import axios from "axios";
 
 export default function Weather() {
   let [weather, setWeather] = useState({});
-  let [city, setCity] = useState(null);
+  let [city, setCity] = useState("");
   let [loaded, setLoaded] = useState(false);
 
   function displayTemperature(response) {
+    const precipitation = response.data.rain
+      ? response.data.rain["1h"] || response.data.rain["3h"] || 0
+      : 0;
+
     setLoaded(true);
     setWeather({
       temperature: response.data.main.temp,
@@ -14,7 +18,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
-      precipitation: response.data.precipitation.value,
+      precipitation: precipitation,
     });
   }
 

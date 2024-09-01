@@ -11,7 +11,7 @@ function App() {
       <footer>
         <a
           className="App-link"
-          href="#"
+          href="https://github.com/dilarainal/react-weather-project"
           target="_blank"
           rel="noopener noreferrer"
         >
