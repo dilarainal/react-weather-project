@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Weather from "./Weather";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Weather />
+      </header>
+      <footer>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Open source code,
         </a>
-      </header>
+        {} by {}
+        <a
+          className="App-link"
+          href="https://www.linkedin.com/in/dilarainal/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dilara Inal
+        </a>
+      </footer>
     </div>
   );
 }
